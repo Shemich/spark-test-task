@@ -20,25 +20,23 @@ object App {
   }
 
   private def runJdbcDataset(spark: SparkSession): Unit = {
-/*
 
-    val connectionProperties = new Properties()
+/*    val connectionProperties = new Properties()
     connectionProperties.put("user", "postgres")
-    connectionProperties.put("password", "t2120112!")
+    connectionProperties.put("password", "postgres")
     connectionProperties.put("driver", "org.postgresql.Driver")
 
     val regionsDF = spark.read
-      .jdbc("jdbc:postgresql:sber_spark_db", "region_book", connectionProperties)
+      .jdbc("jdbc:postgresql:spark_sber_db", "region_book", connectionProperties)
 
     val transactionsDF = spark.read
-      .jdbc("jdbc:postgresql:sber_spark_db", "transactions", connectionProperties)*/
+      .jdbc("jdbc:postgresql:spark_sber_db", "transactions", connectionProperties)*/
 
     import spark.implicits._
-
     val regionsStructureData = Seq(
       Row("Moscow",List("Lukoil","Rosneft","Sberbank", "Russian Railways")),
       Row("St Petersburg",List("Gazprom")),
-      Row("Chelyabinsk",List("Red&White","Chelyabinsk Pipe Rolling Plant")),
+      Row("Chelyabinsk",List("Red&White","Chelyabinsk Pipe")),
       Row("Tolyatti",List("AvtoVAZ")),
       Row("Vladivostok",List("DNS Group")),
       Row("Surgut",List("Surgutneftegas"))
@@ -55,7 +53,7 @@ object App {
       Row("Russian Railways", "AvtoVAZ", 3330, 8),
       Row("Gazprom", "Sberbank", 50600, 9),
       Row("Red&White", "Sberbank", 3500, 10),
-      Row("Chelyabinsk Pipe Rolling Plan", "Sberbank", 1200, 11),
+      Row("Chelyabinsk Pipe", "Sberbank", 1200, 11),
       Row("AvtoVAZ", "Surgutneftegas", 1111, 12),
       Row("DNS Group", "AvtoVAZ", 7599, 13),
       Row("Surgutneftegas", "Gazprom", 1231, 14),

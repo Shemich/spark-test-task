@@ -1,0 +1,20 @@
+create table if not exists transactions
+(
+    company_from   varchar(255),
+    company_to     varchar(255),
+    amount         integer,
+    transaction_id serial
+    primary key
+    );
+
+alter table transactions
+    owner to postgres;
+
+create table if not exists region_book
+(
+    region    varchar(255),
+    companies varchar(255)[]
+    );
+
+alter table region_book
+    owner to postgres;

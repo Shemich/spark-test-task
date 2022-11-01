@@ -1,6 +1,6 @@
 # SparkTask
 
-### JDK 1.8, Scala 2.12.5, Spark 3.3.1
+### Java 8, Scala 2.12.5, Spark 3.3.1
 
 ### Запуск
 1. git clone

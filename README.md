@@ -3,10 +3,11 @@
 ### Java 8, Scala 2.12.5, Spark 3.3.1, Maven
 
 ### Запуск
+```
 1. git clone
 2. mvn clean package
-3. spark-submit --class ru.shemich.App SparkTask-1.0-jar-with-dependencies.jar
-
+3. ./bin/spark-submit --class ru.shemich.App SparkTask-1.0-jar-with-dependencies.jar
+```
 ### Данные
 Две таблицы
 1. Транзакции между компаниями.
